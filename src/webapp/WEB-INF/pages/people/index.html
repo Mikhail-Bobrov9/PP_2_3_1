@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PEOPLE</title>
+</head>
+<body>
+
+<a href="/people/new"> New Person</a>
+<br/>
+
+<table th:border="1">
+    <caption>PEOPLE</caption>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+
+    </tr>
+    <tr th:each="person,state:${people}"
+    class="row" th:classappend="${state.odd}?'odd-row':'even-row'">
+
+        <td> <a th:href="@{/people/{id}(id=${person.getId()})}" th:utext="${person.getId()}">Id </a></td>
+
+        <td> <a th:href="@{/people/{id}(id=${person.getId()})}" th:utext="${person.getName()}">Name</a></td>
+
+        <td> <a th:href="@{/people/{id}(id=${person.getId()})}" th:utext="${person.getSurname()}">Surname</a></td>
+
+        <td> <a th:href="@{/people/{id}(id=${person.getId()})}" th:utext="${person.getEmail()}">Email</a></td>
+
+
+    </tr>
+
+</table>
+
+</body>
+</html>
