@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import web.dao.PersonDAO;
 import web.models.Person;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Component
+@Transactional
 public class PersonServiceImp implements PersonService {
 
     private final PersonDAO personDAO;

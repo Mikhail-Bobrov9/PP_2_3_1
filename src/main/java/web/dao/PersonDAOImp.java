@@ -15,28 +15,28 @@ public class PersonDAOImp implements PersonDAO {
     @PersistenceContext
     private EntityManager em;
 
-    @Transactional
+    @Override
     public  List<Person> index() {
         return em.createQuery("from Person", Person.class).getResultList();
     }
 
-    @Transactional
+    @Override
     public void save(Person person) {
         em.persist(person);
         em.flush();
     }
 
-    @Transactional
+    @Override
     public Person show(int id) {
         return em.find(Person.class, id);
     }
 
-    @Transactional
+    @Override
     public Person update(Person updatedPerson) {
         return em.merge(updatedPerson);
     }
 
-    @Transactional
+    @Override
     public void delete(int id) {
         em.remove(show(id));
         em.flush();
