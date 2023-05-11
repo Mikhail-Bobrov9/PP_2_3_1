@@ -3,10 +3,8 @@ package web.dao;
 
 import org.springframework.stereotype.Component;
 import web.models.Person;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Component
